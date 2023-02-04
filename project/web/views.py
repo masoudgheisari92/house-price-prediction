@@ -1,3 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
+from . import forms
+
+
+def base(request):
+    return render(request, "base.html")
+
+
+def scraper(request):
+    form = forms.ScraperForm()
+    return render(request, "scraper.html", {"form": form})
