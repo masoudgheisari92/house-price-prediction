@@ -1,10 +1,6 @@
-﻿'''This is a program to collect house data from site: ihome.ir and save them in MySQL database without any duplication and
-show houses in a specific price range and finally predict a house price in a specific region using machine learning (Decision Tree) '''
-
-import re
+﻿import re
 import requests
 from bs4 import BeautifulSoup
-import mysql.connector
 from sklearn import tree, preprocessing
 
 cnx = mysql.connector.connect(user='root', password='', host='127.0.0.1', database='test')
