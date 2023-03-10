@@ -43,13 +43,13 @@ class Scraper:
                     "class": "kt-page-title__subtitle kt-page-title__subtitle--responsive-sized"
                 },
             ).text
-            # extract "مرزداران" from "لحظاتی پیش در تهران، مرزداران"
+            # e.g. extract "مرزداران" from "لحظاتی پیش در تهران، مرزداران"
             location = re.findall(r"، (.*)", location)[0]
             data1 = soup.find_all("p", {"class": "kt-unexpandable-row__value"})
             data2 = soup.find_all("span", {"class": "kt-group-row-item__value"})
             final_price = int("".join(re.findall(r"\d+", data1[0].text)))
             price_per_meter2 = int("".join(re.findall(r"\d+", data1[1].text)))
-            # extract 1 from "1 از 2"
+            # e.g. extract 1 from "1 از 2"
             floor_list = re.findall(r"\d+", data1[2].text)
             floor = int(floor_list[0]) if floor_list else 1
             area = int(data2[0].text)

@@ -13,7 +13,7 @@ def done(request):
     return HttpResponse("done")
 
 
-def scraper(request):
+def scrape(request):
     if request.method == "POST":
         form = forms.ScraperForm(request.POST)
         if form.is_valid():
