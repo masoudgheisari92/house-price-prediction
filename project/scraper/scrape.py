@@ -4,7 +4,7 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-from .models import City, House
+from core.models import City, House
 
 
 class Scraper:
@@ -53,7 +53,7 @@ class Scraper:
             floor_list = re.findall(r"\d+", data1[2].text)
             floor = int(floor_list[0]) if floor_list else 1
             area = int(data2[0].text)
-            year_of_construction = int(data2[1].text)
+            year_of_construction = int(re.findall(r"\d+", data2[1].text)[0])
             room = int(data2[2].text)
             city, created = City.objects.get_or_create(name=self._city)
             House.objects.get_or_create(
@@ -70,5 +70,4 @@ class Scraper:
             )
             # at this time, divar acepts only 15 requests per 15 seconds
             time.sleep(1)
-            print(f"{title}")
         return

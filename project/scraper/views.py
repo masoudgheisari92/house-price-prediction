@@ -6,7 +6,7 @@ from .scrape import Scraper
 
 
 def base(request):
-    return render(request, "base.html")
+    return HttpResponse("hello")
 
 
 def done(request):
