@@ -5,10 +5,6 @@ from . import forms
 from .scrape import Scraper
 
 
-def base(request):
-    return HttpResponse("hello")
-
-
 def done(request):
     return HttpResponse("done")
 
@@ -22,7 +18,7 @@ def scrape(request):
             scraper = Scraper(city, num_pages_to_scrape)
             scraper.start()
 
-            return HttpResponseRedirect("/done/")
+            return HttpResponseRedirect("done/")
     else:
         form = forms.ScraperForm()
 

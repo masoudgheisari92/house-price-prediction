@@ -5,7 +5,7 @@ import requests
 from abc import abstractmethod
 from typing import Optional
 
-from core.models import City, House
+from core.models import City, Region, House
 
 
 class Scraper:
@@ -34,10 +34,12 @@ class Scraper:
                     continue
 
                 city, _ = City.objects.get_or_create(name=self._city)
+                region, _ = Region.objects.get_or_create(
+                    city=city, name=final_data["region"]
+                )
                 House.objects.get_or_create(
-                    city=city,
+                    region=region,
                     link=post_url,
-                    region=final_data["region"],
                     title=final_data["title"],
                     description=final_data["description"],
                     price=final_data["price"],

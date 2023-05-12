@@ -10,16 +10,25 @@ class TimeStampedModel(models.Model):
 
 
 class City(TimeStampedModel):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, unique=True)
 
     def __str__(self) -> str:
         return self.name
 
 
-class House(TimeStampedModel):
+class Region(TimeStampedModel):
     city = models.ForeignKey(to=City, on_delete=models.CASCADE, blank=True, null=True)
+    name = models.CharField(max_length=64)
+
+    def __str__(self) -> str:
+        return f"{self.city}/{self.name}"
+
+
+class House(TimeStampedModel):
+    region = models.ForeignKey(
+        to=Region, on_delete=models.CASCADE, blank=True, null=True
+    )
     link = models.URLField(max_length=256, unique=True)
-    region = models.CharField(max_length=64)
     title = models.CharField(max_length=128)
     description = models.CharField(max_length=1024, null=True, blank=True)
     price = models.IntegerField()
