@@ -9,32 +9,23 @@ This is a project to scrape the data of the houses (title, description, region, 
 
 By using machine learning (Decision Tree), a model is trained to predict house prices.
 
-# APIs
+# Getting Started
 
-- `/scrape` scrape the data of the houses of a selected city.
-- `/predict` predict the price of a house based of its city, region, year of construction, area and the number of rooms.
-
-# Clone and Configure the Repository
-
-1. Clone the repository:
+1. Clone the Repository
 
    ```bash
    git clone https://github.com/masoud2685/house_price_prediction.git
    ```
 
-2. Configure the environment variables
+2. Make a `.env` file in `house_price_prediction` directory containing all the following environment variables:
 
-   - make a `.env` file in `house_price_prediction` directory
-   - The new `.env` file should contain all the following environment variables:
-     ```bash
-     DJANGO_SECRET_KEY=""
-     DJANGO_DEBUG=True
-     DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
-     ```
+   ```bash
+   DJANGO_SECRET_KEY=""
+   DJANGO_DEBUG=True
+   DJANGO_ALLOWED_HOSTS=127.0.0.1,localhost
+   ```
 
-# Run Project
-
-1. Create virtual environment and install required packages:
+3. Create virtual environment and install required packages:
 
    ```bash
    # create virtual environment
@@ -45,23 +36,28 @@ By using machine learning (Decision Tree), a model is trained to predict house p
    pip install -r project/requirements.txt
    ```
 
-2. Run the migrations
+4. Run the migrations
 
    ```bash
    cd project
    python manage.py migrate
    ```
 
-3. Create superuser (admin)
+5. Create superuser (admin)
 
    ```bash
    python manage.py createsuperuser
    ```
 
-4. Run server
+6. Run server
    ```bash
    python manage.py runserver
    ```
+
+# APIs
+
+- `/scrape` scrape the data of the houses of a selected city.
+- `/predict` predict the price of a house based of its city, region, year of construction, area and the number of rooms.
 
 # Contact
 
