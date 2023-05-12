@@ -17,14 +17,13 @@ def scrape(request):
     if request.method == "POST":
         form = forms.ScraperForm(request.POST)
         if form.is_valid():
-            website = form.cleaned_data["website"]
             city = form.cleaned_data["city"]
             num_pages_to_scrape = form.cleaned_data["num_pages_to_scrape"]
-            scraper = Scraper(website, city)
+            scraper = Scraper(city, num_pages_to_scrape)
             scraper.start()
 
             return HttpResponseRedirect("/done/")
     else:
         form = forms.ScraperForm()
 
-    return render(request, "scraper.html", {"form": form})
+    return render(request, "scrape.html", {"form": form})
