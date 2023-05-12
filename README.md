@@ -14,7 +14,7 @@ By using machine learning (Decision Tree), a model is trained to predict house p
 - `/scrape` scrape the data of the houses of a selected city.
 - `/predict` predict the price of a house based of its city, region, year of construction, area and the number of rooms.
 
-# Clone and Initialize the Responsitories
+# Clone and Configure the Repository
 
 1. Clone the repository:
 
