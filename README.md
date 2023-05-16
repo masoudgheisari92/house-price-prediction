@@ -5,7 +5,7 @@
 
 # About
 
-This is a project to scrape the data of the houses (title, description, region, price, year of construction, area, number of rooms) from https://divar.ir and save them in database (sqlite) afte preprocessing.
+This is a project to scrape the data of the houses (title, description, region, price, year of construction, area, number of rooms) from https://divar.ir and save them in database (sqlite) after preprocessing.
 
 By using machine learning (Decision Tree), a model is trained to predict house prices.
 
