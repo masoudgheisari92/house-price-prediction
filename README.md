@@ -14,7 +14,7 @@ By using machine learning (Decision Tree), a model is trained to predict house p
 1. Clone the Repository
 
    ```bash
-   git clone https://github.com/masoud2685/house_price_prediction.git
+   git clone https://github.com/masoudgheisari20/house_price_prediction.git
    ```
 
 2. Make a `.env` file in `house_price_prediction` directory containing all the following environment variables:
